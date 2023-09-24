@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://brf2t61jjy2to"]
+
+[ext_resource type="Script" path="res://scene/world/scripts/moving_platform.gd" id="1_414pn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdx22"]
+albedo_color = Color(0.258824, 0.541176, 0.588235, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7a8mm"]
+material = SubResource("StandardMaterial3D_xdx22")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_srxvv"]
+
+[node name="MovingPlatform" type="StaticBody3D"]
+script = ExtResource("1_414pn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7a8mm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_srxvv")

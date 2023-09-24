@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4bpf20goppwo"]
+
+[ext_resource type="Script" path="res://scene/props/scripts/alien_artefact.gd" id="1_61dny"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08bsy"]
+metallic = 1.0
+roughness = 0.09
+
+[sub_resource type="SphereMesh" id="SphereMesh_3s84t"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_be21k"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_61dny")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_08bsy")
+mesh = SubResource("SphereMesh_3s84t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_be21k")

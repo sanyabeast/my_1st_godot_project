@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://vaem02ui5auu"]
+
+[ext_resource type="Script" path="res://scene/world/scripts/float_platform.gd" id="1_2j21r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmwmf"]
+albedo_color = Color(1, 0.635294, 0, 1)
+metallic_specular = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_7a8mm"]
+material = SubResource("StandardMaterial3D_hmwmf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_srxvv"]
+
+[node name="FloatPlatform" type="StaticBody3D"]
+script = ExtResource("1_2j21r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7a8mm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_srxvv")
