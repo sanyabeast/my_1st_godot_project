@@ -8,7 +8,7 @@
 
 [sub_resource type="Environment" id="Environment_57gal"]
 background_mode = 1
-background_color = Color(1, 0.670588, 0.705882, 1)
+background_color = Color(1, 0.843137, 0.780392, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.8, 0.639216, 0.678431, 1)
 tonemap_mode = 3
@@ -16,22 +16,22 @@ ssr_enabled = true
 ssr_max_steps = 128
 ssr_depth_tolerance = 0.11
 ssao_enabled = true
-ssao_sharpness = 1.0
 ssil_enabled = true
-sdfgi_use_occlusion = true
-glow_enabled = true
+sdfgi_cascades = 8
+sdfgi_max_distance = 3276.8
+sdfgi_energy = 0.345
 glow_normalized = true
-glow_intensity = 0.4
-glow_strength = 0.67
-glow_bloom = 0.8
+glow_intensity = 1.0
+glow_strength = 0.4
+glow_bloom = 1.0
 glow_blend_mode = 0
 fog_light_energy = 1.25
 fog_sun_scatter = 1.0
 fog_density = 0.005
 fog_height_density = -0.05
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
-volumetric_fog_albedo = Color(1, 0.941176, 0.909804, 1)
+volumetric_fog_density = 0.02
+volumetric_fog_temporal_reprojection_amount = 0.99
 
 [node name="World" type="Node3D"]
 
@@ -84,6 +84,24 @@ transform = Transform3D(6.77752, 0.167279, 1.39544, -0.322904, 5.6578, 0.0440718
 
 [node name="Obstacle7" parent="Obstacles" instance=ExtResource("2_dn452")]
 transform = Transform3D(3.23391, 1.21309, 4.59135, 0.00145617, 20.2722, -0.313124, -8.68527, 0.455085, 1.70952, -14.0673, 5.91339, -5.78423)
+
+[node name="Obstacle25" parent="Obstacles" instance=ExtResource("2_dn452")]
+transform = Transform3D(6.52291, -10.2109, 4.62417, 1.47021, 28.7287, 2.33552, -6.41734, -3.79717, 5.23532, -42.1255, 9.42533, -16.5098)
+
+[node name="Obstacle29" parent="Obstacles" instance=ExtResource("2_dn452")]
+transform = Transform3D(2.25989, 21.7631, -0.277113, -2.01164, 20.7492, 0.94082, 1.17881, -6.31348, 2.13676, -57.7179, 5.07808, -11.4559)
+
+[node name="Obstacle30" parent="Obstacles" instance=ExtResource("2_dn452")]
+transform = Transform3D(0.734518, 11.542, -1.5366, -1.16828, 18.5333, -0.5344, 0.49029, 26.8703, 1.02863, -51.4377, 6.92059, -32.337)
+
+[node name="Obstacle27" parent="Obstacles" instance=ExtResource("2_dn452")]
+transform = Transform3D(9.20702, -1.93089, 0.919181, 0.667428, 36.5985, -1.88399, -0.823057, 8.07861, 8.75474, -36.7145, 14.3702, -54.0616)
+
+[node name="Obstacle26" parent="Obstacles" instance=ExtResource("2_dn452")]
+transform = Transform3D(1.78646, 30.3348, -0.232621, 0.000804453, -8.19535, -0.98062, -4.79786, 11.2936, -0.0867774, -29.725, 19.9085, -11.612)
+
+[node name="Obstacle28" parent="Obstacles" instance=ExtResource("2_dn452")]
+transform = Transform3D(-2.55982, 8.48336, 0.132014, -0.0973559, 8.45544, -1.06403, -0.818862, -27.5248, -0.286174, -41.8323, 28.1676, -34.4921)
 
 [node name="Obstacle6" parent="Obstacles" instance=ExtResource("2_dn452")]
 transform = Transform3D(0.755215, 0.0321907, 0.0988677, -0.042097, 0.537945, -0.018198, -0.137876, 0.0120762, 0.547102, 5.67827, 0.240932, -3.14383)
@@ -154,22 +172,22 @@ amplitude = 0.6
 frequency = 0.4
 
 [node name="FloatPlatform4" parent="Obstacles" instance=ExtResource("5_xx84j")]
-transform = Transform3D(-1.59137, 0, -3.17527, 0, 0.4, 0, 2.66036, 0, -1.89938, -20.3619, 18.1262, 4.91804)
+transform = Transform3D(-1.59137, 0, -3.17527, 0, 0.4, 0, 2.66036, 0, -1.89938, -52.6424, 23.6711, -4.89355)
 amplitude = 0.6
 frequency = 0.4
 
 [node name="FloatPlatform5" parent="Obstacles" instance=ExtResource("5_xx84j")]
-transform = Transform3D(1.58933, 0, -3.17673, 0, 0.4, 0, 2.66158, 0, 1.89694, -28.9058, 23.6174, 11.9913)
+transform = Transform3D(1.58933, 0, -3.17673, 0, 0.4, 0, 2.66158, 0, 1.89694, -45.3403, 27.134, 4.36944)
 amplitude = 0.454
 frequency = 0.647
 
 [node name="FloatPlatform6" parent="Obstacles" instance=ExtResource("5_xx84j")]
-transform = Transform3D(-2.41849, 0, -2.31466, 0, 0.4, 0, 1.93931, 0, -2.88658, -28.9058, 28.3117, 24.387)
+transform = Transform3D(-2.41849, 0, -2.31466, 0, 0.4, 0, 1.93931, 0, -2.88658, -42.782, 31.6295, 17.5665)
 amplitude = 0.55
 frequency = 0.43
 
 [node name="FloatPlatform7" parent="Obstacles" instance=ExtResource("5_xx84j")]
-transform = Transform3D(-0.424041, 0, -3.66522, 0, 0.4, 0, 3.07086, 0, -0.506114, -34.6485, 31.7245, 35.5222)
+transform = Transform3D(-0.424041, 0, -3.66522, 0, 0.4, 0, 3.07086, 0, -0.506114, -45.3957, 35.0283, 28.86)
 amplitude = 0.6
 frequency = 0.4
 
@@ -220,10 +238,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.50311, 2.8886, 7.75409)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.6832, 6.64108, 59.7676)
 
 [node name="Player" parent="." instance=ExtResource("3_kjcvo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262818, 0)
+transform = Transform3D(-0.99924, 0, -0.0389808, 0, 1, 0, 0.0389808, 0, -0.99924, -0.00239637, 1.22571, 2.29291)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.935245, -0.253081, -0.247521, -0.167176, -0.300572, 0.938993, -0.31204, 0.919569, 0.238799, -2.76193, 17.2574, 1.96784)
+transform = Transform3D(-0.317192, -0.490862, -0.811446, -0.62492, -0.535412, 0.568163, -0.713347, 0.687306, -0.136921, -2.76193, 17.2574, 1.96784)
+light_energy = 2.0
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

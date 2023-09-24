@@ -1,8 +1,10 @@
 extends CharacterBody3D
+class_name Player
 
 const MOUSE_SENSITIVITY = 0.1
 
 @onready var camera = $CameraRoot/Camera3D
+@onready var weapon_manager: WeaponManager = $CameraRoot/Weapons
 
 var current_vel = Vector3.ZERO
 var dir = Vector3.ZERO
@@ -32,6 +34,10 @@ func _process(delta):
 	window_activity()
 	
 func _physics_process(delta):
+	process_movement(delta)
+	process_weapons(delta)
+
+func process_movement(delta):
 	dir = Vector3.ZERO
 
 	if Input.is_action_pressed("forward"):
@@ -64,6 +70,14 @@ func _physics_process(delta):
 	velocity.z = lerp(velocity.z, target_vel.z, accel * delta)
 	
 	move_and_slide()
+
+func process_weapons(delta):
+	if Input.is_action_just_pressed("empty"):
+		weapon_manager.change_weapon("Empty")
+	if Input.is_action_just_pressed("primary"):
+		weapon_manager.change_weapon("Primary")
+	if Input.is_action_just_pressed("secondary"):
+		weapon_manager.change_weapon("Secondary")
 
 func window_activity():
 	if Input.is_action_just_pressed("ui_cancel"):

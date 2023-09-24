@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ui5a1q1qqf5p"]
+[gd_scene load_steps=8 format=3 uid="uid://ui5a1q1qqf5p"]
+
+[ext_resource type="Script" path="res://scene/weapons/weapon.gd" id="1_dkqki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ai0j5"]
 albedo_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
@@ -22,6 +24,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(1.5708, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_weapon"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_bjoi2"]
 length = 0.001
@@ -35,7 +51,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1.5708, 0, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_t1b06"]
@@ -53,6 +69,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide_weapon"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxutj"]
 _data = {
@@ -62,6 +92,8 @@ _data = {
 }
 
 [node name="Pistol_A" type="Node3D"]
+script = ExtResource("1_dkqki")
+weapon_name = "Pistol"
 
 [node name="Root" type="Node3D" parent="."]
 
@@ -72,12 +104,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="Upper" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.03, 0, 0, 0, 0.02, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.0299609, 0, 0, 0, 0.0200445, 0, 0, 0, 0.100223, 0, 0, 0)
 mesh = SubResource("BoxMesh_p50ti")
 skeleton = NodePath("../../../..")
 
 [node name="Lower" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.02, 0, 0, 0, 0.0578128, 0.00401311, 0, -0.0160524, 0.0144532, 0, -0.0299416, 0.038127)
+transform = Transform3D(0.0211839, 0, 0, 0, 0.0578128, 0.00673964, 0, -0.0160524, 0.0242728, 0, -0.0299416, 0.038127)
 mesh = SubResource("BoxMesh_p50ti")
 skeleton = NodePath("../../../..")
 
