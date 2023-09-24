@@ -16,14 +16,22 @@ ssr_enabled = true
 ssr_max_steps = 128
 ssr_depth_tolerance = 0.11
 ssao_enabled = true
+ssao_sharpness = 1.0
 ssil_enabled = true
+sdfgi_use_occlusion = true
 glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.4
+glow_strength = 0.67
+glow_bloom = 0.8
+glow_blend_mode = 0
 fog_light_energy = 1.25
 fog_sun_scatter = 1.0
 fog_density = 0.005
 fog_height_density = -0.05
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.02
+volumetric_fog_density = 0.03
+volumetric_fog_albedo = Color(1, 0.941176, 0.909804, 1)
 
 [node name="World" type="Node3D"]
 
@@ -116,6 +124,12 @@ transform = Transform3D(-0.273521, -2.76041, 0.61821, -0.0263459, 26.9242, 0.063
 [node name="Obstacle21" parent="Obstacles" instance=ExtResource("2_dn452")]
 transform = Transform3D(-0.26889, 2.88308, 0.618899, 0.0704956, 26.8812, -0.0571825, -0.878693, 1.27436, -0.19398, 54.3675, 12.1911, -33.2475)
 
+[node name="Obstacle23" parent="Obstacles" instance=ExtResource("2_dn452")]
+transform = Transform3D(-0.0466148, -0.781149, 0.127838, 0.153224, -0.631379, 0.0388442, 0.00188914, 31.935, 0.00389497, 55.2708, 24.946, -16.5613)
+
+[node name="Obstacle24" parent="Obstacles" instance=ExtResource("2_dn452")]
+transform = Transform3D(-0.0466148, -0.85535, 0.127838, 0.153224, -0.691353, 0.0388442, 0.00188914, 34.9685, 0.00389497, 54.4436, 24.2774, 17.2566)
+
 [node name="Obstacle14" parent="Obstacles" instance=ExtResource("2_dn452")]
 transform = Transform3D(-2.75303, -2.50762, 7.58025, 0.102352, 67.1748, 0.33901, -8.7325, 1.57789, -2.38582, 8.62827, 15.2158, 79.6711)
 
@@ -129,7 +143,7 @@ transform = Transform3D(4.75988, 0.95833, 15.8982, 0.0866258, 27.5235, -0.718839
 transform = Transform3D(-0.124738, 0.591953, 10.3062, 0.28027, 17.001, -0.356077, -11.7479, 0.399306, -0.117954, -33.9944, 4.46894, 71.1723)
 
 [node name="Obstacle18" parent="Obstacles" instance=ExtResource("2_dn452")]
-transform = Transform3D(3.6473, 0.396208, 5.37559, -0.00519492, 11.3792, -0.275977, -5.18573, 0.267265, 3.78109, -31.3261, 4.63482, 60.1542)
+transform = Transform3D(3.6473, 0.396208, 5.37559, -0.00519492, 11.3792, -0.275977, -5.18573, 0.267265, 3.78109, -31.3261, 1.21383, 57.5805)
 
 [node name="Obstacle3" parent="Obstacles" instance=ExtResource("2_dn452")]
 transform = Transform3D(-0.414448, -0.518975, 1.12198, -3.63836, 4.94289, 0.105157, -15.5246, -1.14457, -0.0545996, 25.9402, 0.277392, -2.3672)
@@ -139,10 +153,58 @@ transform = Transform3D(3.1, 0, 0, 0, 0.4, 0, 0, 0, 3.7, 14.5663, 11.9383, -2.05
 amplitude = 0.6
 frequency = 0.4
 
+[node name="FloatPlatform4" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(-1.59137, 0, -3.17527, 0, 0.4, 0, 2.66036, 0, -1.89938, -20.3619, 18.1262, 4.91804)
+amplitude = 0.6
+frequency = 0.4
+
+[node name="FloatPlatform5" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(1.58933, 0, -3.17673, 0, 0.4, 0, 2.66158, 0, 1.89694, -28.9058, 23.6174, 11.9913)
+amplitude = 0.454
+frequency = 0.647
+
+[node name="FloatPlatform6" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(-2.41849, 0, -2.31466, 0, 0.4, 0, 1.93931, 0, -2.88658, -28.9058, 28.3117, 24.387)
+amplitude = 0.55
+frequency = 0.43
+
+[node name="FloatPlatform7" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(-0.424041, 0, -3.66522, 0, 0.4, 0, 3.07086, 0, -0.506114, -34.6485, 31.7245, 35.5222)
+amplitude = 0.6
+frequency = 0.4
+
+[node name="FloatPlatform8" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(1.5339, 0, -3.21531, 0, 0.4, 0, 2.69391, 0, 1.83078, -47.6745, 22.2573, 41.7551)
+amplitude = 0.6
+frequency = 0.4
+
+[node name="FloatPlatform9" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(-0.424041, 0, -3.66522, 0, 0.4, 0, 3.07086, 0, -0.506114, -49.3553, 25.3861, 53.8707)
+amplitude = 0.75
+frequency = 0.335
+
+[node name="FloatPlatform10" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(1.67137, 0, -3.11617, 0, 0.4, 0, 2.61084, 0, 1.99487, -49.3553, 28.3871, 68.3674)
+amplitude = 0.6
+frequency = 0.4
+
 [node name="FloatPlatform2" parent="Obstacles" instance=ExtResource("5_xx84j")]
 transform = Transform3D(0.962274, 0, -3.51723, 0, 0.945657, 0, 2.94687, 0, 1.14852, 9.64639, 15.7489, -12.9929)
 amplitude = 0.4
 frequency = 0.6
+
+[node name="FloatPlatform11" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(0.960007, -0.064879, -3.50894, 0.066019, 0.943429, -0.241308, 2.94687, 0, 1.14852, 17.9439, 20.0698, -25.0147)
+amplitude = 0.4
+frequency = 0.6
+
+[node name="FloatPlatform12" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(-2.73165, -0.01143, -1.74874, 0.066019, 0.943429, -0.241308, 1.46415, -0.0638642, -3.25172, 29.2042, 20.5074, -33.3046)
+frequency = 0.55
+
+[node name="FloatPlatform13" parent="Obstacles" instance=ExtResource("5_xx84j")]
+transform = Transform3D(-0.807269, -0.0543244, -3.56602, 0.066019, 0.943429, -0.241308, 2.99232, -0.0354704, -0.956718, 43.2042, 23.577, -33.3046)
+frequency = 0.65
 
 [node name="FloatPlatform3" parent="Obstacles" instance=ExtResource("5_xx84j")]
 transform = Transform3D(2.53797, 0, 2.12461, 0, 0.4, 0, -1.78008, 0, 3.02919, 0.707146, 18.4285, -21.481)
@@ -153,6 +215,9 @@ frequency = 0.55
 
 [node name="AlienArtefact" parent="Props" instance=ExtResource("4_quoq2")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.50311, 2.8886, 7.75409)
+
+[node name="AlienArtefact2" parent="Props" instance=ExtResource("4_quoq2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.6832, 6.64108, 59.7676)
 
 [node name="Player" parent="." instance=ExtResource("3_kjcvo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262818, 0)
