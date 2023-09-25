@@ -94,6 +94,8 @@ _data = {
 [node name="Pistol_A" type="Node3D"]
 script = ExtResource("1_dkqki")
 weapon_name = "Pistol"
+equip_speed = 1.5
+unequip_speed = 1.5
 
 [node name="Root" type="Node3D" parent="."]
 

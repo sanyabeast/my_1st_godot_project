@@ -29,7 +29,14 @@ func _input(event):
 		$CameraRoot.rotation_degrees.x = clamp($CameraRoot.rotation_degrees.x, -75, 75)
 		# rotates the view horizontally
 		self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
-
+		
+	if event is InputEventMouseButton:
+		if event.pressed:
+			match event.button_index:
+				MOUSE_BUTTON_WHEEL_UP:
+					weapon_manager.next_weapon()
+				MOUSE_BUTTON_WHEEL_DOWN:
+					weapon_manager.prev_weapon()
 func _process(delta):
 	window_activity()
 	
@@ -73,11 +80,11 @@ func process_movement(delta):
 
 func process_weapons(delta):
 	if Input.is_action_just_pressed("empty"):
-		weapon_manager.change_weapon("Empty")
+		weapon_manager.change_weapon(WeaponManager.EWeaponSlot.Empty)
 	if Input.is_action_just_pressed("primary"):
-		weapon_manager.change_weapon("Primary")
+		weapon_manager.change_weapon(WeaponManager.EWeaponSlot.Primary)
 	if Input.is_action_just_pressed("secondary"):
-		weapon_manager.change_weapon("Secondary")
+		weapon_manager.change_weapon(WeaponManager.EWeaponSlot.Secondary)
 
 func window_activity():
 	if Input.is_action_just_pressed("ui_cancel"):

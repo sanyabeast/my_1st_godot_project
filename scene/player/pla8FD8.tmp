@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfef4a2ywe5dv"]
+[gd_scene load_steps=9 format=3 uid="uid://cfef4a2ywe5dv"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_rqsyk"]
 [ext_resource type="Script" path="res://scene/player/weapon_manager.gd" id="2_7jo84"]
+[ext_resource type="PackedScene" uid="uid://0kmtim1ocjq7" path="res://scene/weapons/unarmed.tscn" id="2_htm4p"]
 [ext_resource type="PackedScene" uid="uid://ui5a1q1qqf5p" path="res://scene/weapons/pistol_a.tscn" id="2_k7rt2"]
 [ext_resource type="PackedScene" uid="uid://kj358lk41b5i" path="res://scene/weapons/rifle_a.tscn" id="3_aadvs"]
 [ext_resource type="PackedScene" uid="uid://bok25g4kigywj" path="res://scene/ui/hud/hud.tscn" id="5_kdk6x"]
@@ -30,6 +31,8 @@ fov = 85.0
 
 [node name="Weapons" type="Node3D" parent="CameraRoot"]
 script = ExtResource("2_7jo84")
+
+[node name="Unarmed" parent="CameraRoot/Weapons" instance=ExtResource("2_htm4p")]
 
 [node name="Pistol_A" parent="CameraRoot/Weapons" instance=ExtResource("2_k7rt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.055, -0.184)
