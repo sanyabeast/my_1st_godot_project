@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgggsvp2vgsux"
+path="res://.godot/imported/stairsFull.obj-5b0e9d1390e49c3c9333d932b24322de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairsFull.obj-5b0e9d1390e49c3c9333d932b24322de.mesh"]
+
+source_file="res://models/packs/fantasy_town_kit/stairsFull.obj"
+dest_files=["res://.godot/imported/stairsFull.obj-5b0e9d1390e49c3c9333d932b24322de.mesh", "res://.godot/imported/stairsFull.obj-5b0e9d1390e49c3c9333d932b24322de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

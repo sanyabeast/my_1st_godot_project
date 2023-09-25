@@ -5,30 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cfef4a2ywe5dv" path="res://scene/player/player.tscn" id="3_kjcvo"]
 [ext_resource type="PackedScene" uid="uid://d4bpf20goppwo" path="res://scene/props/alien_artefact.tscn" id="4_quoq2"]
 [ext_resource type="PackedScene" uid="uid://vaem02ui5auu" path="res://scene/world/float_platform.tscn" id="5_xx84j"]
-
-[sub_resource type="Environment" id="Environment_57gal"]
-background_mode = 1
-background_color = Color(1, 0.843137, 0.780392, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.8, 0.639216, 0.678431, 1)
-tonemap_mode = 3
-ssr_enabled = true
-ssr_max_steps = 128
-ssr_depth_tolerance = 0.11
-ssao_enabled = true
-ssil_enabled = true
-glow_normalized = true
-glow_intensity = 1.0
-glow_strength = 0.4
-glow_bloom = 1.0
-glow_blend_mode = 0
-fog_light_energy = 1.25
-fog_sun_scatter = 1.0
-fog_density = 0.005
-fog_height_density = -0.05
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.02
-volumetric_fog_temporal_reprojection_amount = 0.99
+[ext_resource type="PackedScene" uid="uid://e3wew4ri7j4w" path="res://scene/world/main/environment.tscn" id="6_afpoa"]
 
 [node name="World" type="Node3D"]
 
@@ -237,10 +214,4 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.6832, 6.64108, 59.7676)
 [node name="Player" parent="." instance=ExtResource("3_kjcvo")]
 transform = Transform3D(-0.99924, 0, -0.0389808, 0, 1, 0, 0.0389808, 0, -0.99924, -0.00239637, 1.22571, 2.29291)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.317192, -0.490862, -0.811446, -0.62492, -0.535412, 0.568163, -0.713347, 0.687306, -0.136921, -2.76193, 17.2574, 1.96784)
-light_energy = 2.0
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_57gal")
+[node name="Environment" parent="." instance=ExtResource("6_afpoa")]

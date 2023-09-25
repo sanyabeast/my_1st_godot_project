@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cev8dp40d636w"
+path="res://.godot/imported/tentClosed.obj-85940d27a97694607b9f50c30371c561.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tentClosed.obj-85940d27a97694607b9f50c30371c561.mesh"]
+
+source_file="res://models/packs/survival_kit/tentClosed.obj"
+dest_files=["res://.godot/imported/tentClosed.obj-85940d27a97694607b9f50c30371c561.mesh", "res://.godot/imported/tentClosed.obj-85940d27a97694607b9f50c30371c561.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

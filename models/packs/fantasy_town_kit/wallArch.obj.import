@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://djvg3udoujp0e"
+path="res://.godot/imported/wallArch.obj-e295f84ffb2e02fce4adc493b7905800.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallArch.obj-e295f84ffb2e02fce4adc493b7905800.mesh"]
+
+source_file="res://models/packs/fantasy_town_kit/wallArch.obj"
+dest_files=["res://.godot/imported/wallArch.obj-e295f84ffb2e02fce4adc493b7905800.mesh", "res://.godot/imported/wallArch.obj-e295f84ffb2e02fce4adc493b7905800.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

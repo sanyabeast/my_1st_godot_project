@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://da5ksv2iwyicn"
+path="res://.godot/imported/toolAxe.obj-04b0332a39e99eeefd7a501651feee65.mesh"
+
+[deps]
+
+files=["res://.godot/imported/toolAxe.obj-04b0332a39e99eeefd7a501651feee65.mesh"]
+
+source_file="res://models/packs/survival_kit/toolAxe.obj"
+dest_files=["res://.godot/imported/toolAxe.obj-04b0332a39e99eeefd7a501651feee65.mesh", "res://.godot/imported/toolAxe.obj-04b0332a39e99eeefd7a501651feee65.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

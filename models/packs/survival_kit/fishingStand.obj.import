@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cyww1kwetx050"
+path="res://.godot/imported/fishingStand.obj-3de7b3f7aaeb966b706c661bdba64f23.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fishingStand.obj-3de7b3f7aaeb966b706c661bdba64f23.mesh"]
+
+source_file="res://models/packs/survival_kit/fishingStand.obj"
+dest_files=["res://.godot/imported/fishingStand.obj-3de7b3f7aaeb966b706c661bdba64f23.mesh", "res://.godot/imported/fishingStand.obj-3de7b3f7aaeb966b706c661bdba64f23.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

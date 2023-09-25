@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nqk25wigbxtm"
+path="res://.godot/imported/roofWindow.obj-49ffe5ec953d82db42e741144db77a0c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roofWindow.obj-49ffe5ec953d82db42e741144db77a0c.mesh"]
+
+source_file="res://models/packs/fantasy_town_kit/roofWindow.obj"
+dest_files=["res://.godot/imported/roofWindow.obj-49ffe5ec953d82db42e741144db77a0c.mesh", "res://.godot/imported/roofWindow.obj-49ffe5ec953d82db42e741144db77a0c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

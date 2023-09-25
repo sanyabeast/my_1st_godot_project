@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dg2cmi5lo3ila"
+path="res://.godot/imported/wall.obj-f862359c9c2eafc79cfae9161110784b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall.obj-f862359c9c2eafc79cfae9161110784b.mesh"]
+
+source_file="res://models/packs/fantasy_town_kit/wall.obj"
+dest_files=["res://.godot/imported/wall.obj-f862359c9c2eafc79cfae9161110784b.mesh", "res://.godot/imported/wall.obj-f862359c9c2eafc79cfae9161110784b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ceoj8mq13wgfh"
+path="res://.godot/imported/roadBend.obj-5c9f785e8e1ed200139e37fb73d04523.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadBend.obj-5c9f785e8e1ed200139e37fb73d04523.mesh"]
+
+source_file="res://models/packs/fantasy_town_kit/roadBend.obj"
+dest_files=["res://.godot/imported/roadBend.obj-5c9f785e8e1ed200139e37fb73d04523.mesh", "res://.godot/imported/roadBend.obj-5c9f785e8e1ed200139e37fb73d04523.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ciws7xysxnhl7"
+path="res://.godot/imported/wallDoorwaySquareWide.obj-6913b5df72c132c2fe768aa0d5b39480.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallDoorwaySquareWide.obj-6913b5df72c132c2fe768aa0d5b39480.mesh"]
+
+source_file="res://models/packs/fantasy_town_kit/wallDoorwaySquareWide.obj"
+dest_files=["res://.godot/imported/wallDoorwaySquareWide.obj-6913b5df72c132c2fe768aa0d5b39480.mesh", "res://.godot/imported/wallDoorwaySquareWide.obj-6913b5df72c132c2fe768aa0d5b39480.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

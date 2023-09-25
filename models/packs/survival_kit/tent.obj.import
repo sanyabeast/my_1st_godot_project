@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cr6sy12fq355n"
+path="res://.godot/imported/tent.obj-6c3a6cc12fda8e2a090c639171d7484c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tent.obj-6c3a6cc12fda8e2a090c639171d7484c.mesh"]
+
+source_file="res://models/packs/survival_kit/tent.obj"
+dest_files=["res://.godot/imported/tent.obj-6c3a6cc12fda8e2a090c639171d7484c.mesh", "res://.godot/imported/tent.obj-6c3a6cc12fda8e2a090c639171d7484c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

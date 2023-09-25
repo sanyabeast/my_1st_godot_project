@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcfqm1r8n46o8"
+path="res://.godot/imported/roof_overhang.obj-399e6681d74826be6ccdc4950da2380d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roof_overhang.obj-399e6681d74826be6ccdc4950da2380d.mesh"]
+
+source_file="res://models/packs/city_kit_commercial/roof_overhang.obj"
+dest_files=["res://.godot/imported/roof_overhang.obj-399e6681d74826be6ccdc4950da2380d.mesh", "res://.godot/imported/roof_overhang.obj-399e6681d74826be6ccdc4950da2380d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

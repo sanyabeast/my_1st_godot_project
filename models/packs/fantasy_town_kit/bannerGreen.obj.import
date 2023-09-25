@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cic08rhhvrurw"
+path="res://.godot/imported/bannerGreen.obj-2492c56d45571b84989fe965a026e28b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bannerGreen.obj-2492c56d45571b84989fe965a026e28b.mesh"]
+
+source_file="res://models/packs/fantasy_town_kit/bannerGreen.obj"
+dest_files=["res://.godot/imported/bannerGreen.obj-2492c56d45571b84989fe965a026e28b.mesh", "res://.godot/imported/bannerGreen.obj-2492c56d45571b84989fe965a026e28b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

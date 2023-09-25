@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://g66k1dtbnub4"
+path="res://.godot/imported/detail_overhangWide.obj-98c6b677da4461a80d722d276a225156.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail_overhangWide.obj-98c6b677da4461a80d722d276a225156.mesh"]
+
+source_file="res://models/packs/city_kit_commercial/detail_overhangWide.obj"
+dest_files=["res://.godot/imported/detail_overhangWide.obj-98c6b677da4461a80d722d276a225156.mesh", "res://.godot/imported/detail_overhangWide.obj-98c6b677da4461a80d722d276a225156.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
