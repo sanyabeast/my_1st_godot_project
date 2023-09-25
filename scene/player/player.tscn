@@ -32,10 +32,9 @@ fov = 85.0
 script = ExtResource("2_7jo84")
 
 [node name="Pistol_A" parent="CameraRoot/Weapons" instance=ExtResource("2_k7rt2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.055, -0.184)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.07, -0.2)
 
 [node name="Rifle_A" parent="CameraRoot/Weapons" instance=ExtResource("3_aadvs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.075, -0.24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.09, -0.215)
 
 [node name="HUD" parent="." instance=ExtResource("5_kdk6x")]

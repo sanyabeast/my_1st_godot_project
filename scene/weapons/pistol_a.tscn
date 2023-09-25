@@ -1,13 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ui5a1q1qqf5p"]
+[gd_scene load_steps=7 format=3 uid="uid://ui5a1q1qqf5p"]
 
 [ext_resource type="Script" path="res://scene/weapons/weapon.gd" id="1_dkqki"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ai0j5"]
-albedo_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
-roughness = 0.8
-
-[sub_resource type="BoxMesh" id="BoxMesh_p50ti"]
-material = SubResource("StandardMaterial3D_ai0j5")
+[ext_resource type="ArrayMesh" uid="uid://bnwmbvt73oxic" path="res://models/packs/blaster_kit/blasterB.obj" id="2_fvibw"]
 
 [sub_resource type="Animation" id="Animation_21mwr"]
 resource_name = "Equip"
@@ -94,8 +88,6 @@ _data = {
 [node name="Pistol_A" type="Node3D"]
 script = ExtResource("1_dkqki")
 weapon_name = "Pistol"
-equip_speed = 1.5
-unequip_speed = 1.5
 
 [node name="Root" type="Node3D" parent="."]
 
@@ -106,13 +98,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="Upper" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.0299609, 0, 0, 0, 0.0200445, 0, 0, 0, 0.100223, 0, 0, 0)
-mesh = SubResource("BoxMesh_p50ti")
-skeleton = NodePath("../../../..")
-
-[node name="Lower" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.0211839, 0, 0, 0, 0.0578128, 0.00673964, 0, -0.0160524, 0.0242728, 0, -0.0299416, 0.038127)
-mesh = SubResource("BoxMesh_p50ti")
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = ExtResource("2_fvibw")
 skeleton = NodePath("../../../..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

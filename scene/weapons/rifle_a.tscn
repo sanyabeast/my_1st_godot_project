@@ -1,14 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://kj358lk41b5i"]
+[gd_scene load_steps=7 format=3 uid="uid://kj358lk41b5i"]
 
 [ext_resource type="Script" path="res://scene/weapons/weapon.gd" id="1_j20va"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bo6t"]
-albedo_color = Color(0, 0.0509804, 0.0196078, 1)
-metallic = 0.5
-roughness = 0.64
-
-[sub_resource type="BoxMesh" id="BoxMesh_mrn27"]
-material = SubResource("StandardMaterial3D_1bo6t")
+[ext_resource type="ArrayMesh" uid="uid://5p7dkhr0fe3o" path="res://models/packs/blaster_kit/blasterD.obj" id="2_os5p2"]
 
 [sub_resource type="Animation" id="Animation_21mwr"]
 resource_name = "Equip"
@@ -95,8 +88,6 @@ _data = {
 [node name="Rifle_A" type="Node3D"]
 script = ExtResource("1_j20va")
 weapon_name = "Rifle"
-equip_speed = 1.5
-unequip_speed = 1.5
 
 [node name="Root" type="Node3D" parent="."]
 
@@ -107,18 +98,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.0291542, 0, 0, 0, 0.0382455, 0, 0, 0, 0.25, 0, 0.0140435, 0)
-mesh = SubResource("BoxMesh_mrn27")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.0128855, 0, 0, 0, 0.0699219, 0.00566059, 0, -0.0158718, 0.0249374, 0, -0.0245317, 0.0975919)
-mesh = SubResource("BoxMesh_mrn27")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.0128855, 0, 0, 0, 0.0508745, -0.00178691, 0, 0.00356374, 0.0255092, 0, -0.0125127, 0.0459063)
-mesh = SubResource("BoxMesh_mrn27")
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.0140435, 0)
+mesh = ExtResource("2_os5p2")
 skeleton = NodePath("../../../..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
