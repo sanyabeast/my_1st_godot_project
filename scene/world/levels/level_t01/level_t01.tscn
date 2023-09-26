@@ -1,16 +1,55 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0sms3bnjxp2k"]
+[gd_scene load_steps=17 format=3 uid="uid://c0sms3bnjxp2k"]
 
 [ext_resource type="PackedScene" uid="uid://bjsp64ilukxjc" path="res://scene/world/ground.tscn" id="1_carn5"]
 [ext_resource type="PackedScene" uid="uid://de75c0bsc57qc" path="res://scene/world/obstacle.tscn" id="2_1u7da"]
 [ext_resource type="PackedScene" uid="uid://vaem02ui5auu" path="res://scene/world/float_platform.tscn" id="3_0budf"]
 [ext_resource type="PackedScene" uid="uid://d4bpf20goppwo" path="res://scene/props/alien_artefact.tscn" id="4_kmgk4"]
 [ext_resource type="PackedScene" uid="uid://cfef4a2ywe5dv" path="res://scene/player/player.tscn" id="5_6f8sn"]
+[ext_resource type="Shader" path="res://scene/world/main/sky_shader_a1.gdshader" id="6_6tujc"]
 [ext_resource type="PackedScene" uid="uid://b0nl83hhk0uw4" path="res://scene/weapons/ammo_pickup/ammo_pickup.tscn" id="6_acj8i"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j4wsc"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_voubo"]
+noise = SubResource("FastNoiseLite_j4wsc")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n04hm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hwhv3"]
+noise = SubResource("FastNoiseLite_n04hm")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s0ko8"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_ag7d4"]
+noise = SubResource("FastNoiseLite_s0ko8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hw642"]
+shader = ExtResource("6_6tujc")
+shader_parameter/wind_direction = Vector2(1, 0)
+shader_parameter/wind_speed = 10.0
+shader_parameter/_density = 0.01
+shader_parameter/cloud_coverage = 0.347
+shader_parameter/_time_offset = 0.0
+shader_parameter/rayleigh = 2.0
+shader_parameter/rayleigh_color = Color(0.26, 0.41, 0.58, 1)
+shader_parameter/mie = 0.005
+shader_parameter/mie_eccentricity = 0.8
+shader_parameter/mie_color = Color(0.63, 0.77, 0.92, 1)
+shader_parameter/turbidity = 10.0
+shader_parameter/sun_disk_scale = 0.0
+shader_parameter/ground_color = Color(1, 1, 1, 1)
+shader_parameter/exposure = 0.1
+shader_parameter/worlnoise = SubResource("NoiseTexture3D_ag7d4")
+shader_parameter/perlworlnoise = SubResource("NoiseTexture3D_voubo")
+shader_parameter/weathermap = SubResource("NoiseTexture2D_hwhv3")
+
+[sub_resource type="Sky" id="Sky_d0bm3"]
+sky_material = SubResource("ShaderMaterial_hw642")
+
 [sub_resource type="Environment" id="Environment_57gal"]
-background_mode = 1
+background_mode = 2
 background_color = Color(1, 0.843137, 0.780392, 1)
-ambient_light_source = 2
+sky = SubResource("Sky_d0bm3")
 ambient_light_color = Color(0.8, 0.639216, 0.678431, 1)
 tonemap_mode = 3
 ssr_enabled = true
@@ -18,6 +57,7 @@ ssr_max_steps = 128
 ssr_depth_tolerance = 0.11
 ssao_enabled = true
 ssil_enabled = true
+sdfgi_enabled = true
 glow_normalized = true
 glow_intensity = 1.0
 glow_strength = 0.4
@@ -28,7 +68,7 @@ fog_sun_scatter = 1.0
 fog_density = 0.005
 fog_height_density = -0.05
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.02
+volumetric_fog_density = 0.0075
 volumetric_fog_temporal_reprojection_amount = 0.99
 
 [node name="World" type="Node3D"]
@@ -119,8 +159,20 @@ transform = Transform3D(3.42307, 0.0503233, 3.9789, -0.634408, 4.55946, 0.410711
 [node name="Obstacle9" parent="Obstacles" instance=ExtResource("2_1u7da")]
 transform = Transform3D(3.40651, 0.648973, 3.92618, -0.292295, 4.55511, -0.705312, -4.23823, 0.207464, 3.20435, -17.8072, 1.48371, 14.8872)
 
+[node name="Obstacle35" parent="Obstacles" instance=ExtResource("2_1u7da")]
+transform = Transform3D(5.49117, 0.738426, 6.87331, -0.471169, 5.18297, -1.23474, -6.83187, 0.23606, 5.60964, 30.9241, -1.06084, 40.6765)
+
+[node name="Obstacle36" parent="Obstacles" instance=ExtResource("2_1u7da")]
+transform = Transform3D(4.18001, 0.698712, 4.86023, -0.358665, 4.90423, -0.873107, -5.20058, 0.223365, 3.96667, 30.9241, 1.29457, 40.6765)
+
+[node name="Obstacle37" parent="Obstacles" instance=ExtResource("2_1u7da")]
+transform = Transform3D(2.54678, 0.637221, 2.53091, -0.218526, 4.47263, -0.45466, -3.16859, 0.203707, 2.0656, 30.9241, 3.205, 40.6765)
+
+[node name="Obstacle38" parent="Obstacles" instance=ExtResource("2_1u7da")]
+transform = Transform3D(1.27219, 0.565391, 0.977241, -0.10916, 3.96845, -0.175555, -1.58281, 0.180744, 0.797575, 30.9241, 4.82602, 40.6765)
+
 [node name="Obstacle5" parent="Obstacles" instance=ExtResource("2_1u7da")]
-transform = Transform3D(4.54473, 0.547461, 7.32543, 1.08977e-08, 15.7232, -0.371122, -6.73731, 0.369294, 4.94143, 7.09406, -0.482606, 20.6173)
+transform = Transform3D(4.54473, 0.547461, 7.32543, 1.08977e-08, 15.7232, -0.371122, -6.73731, 0.369294, 4.94143, 7.85045, -0.482606, 20.6173)
 
 [node name="Obstacle31" parent="Obstacles" instance=ExtResource("2_1u7da")]
 transform = Transform3D(1.13299, 0.441704, 5.91033, 5.21885e-09, 15.7232, -0.371122, -1.01943, 0.490906, 6.56869, 20.9462, -0.685841, 23.4816)
@@ -181,6 +233,21 @@ transform = Transform3D(-0.414448, -0.518975, 1.12198, -3.63836, 4.94289, 0.1051
 
 [node name="FloatPlatform" parent="Obstacles" instance=ExtResource("3_0budf")]
 transform = Transform3D(3.1, 0, 0, 0, 0.4, 0, 0, 0, 3.7, 14.5663, 11.9383, -2.05638)
+amplitude = 0.6
+frequency = 0.4
+
+[node name="FloatPlatform16" parent="Obstacles" instance=ExtResource("3_0budf")]
+transform = Transform3D(3.1, 0, 0, 0, 0.4, 0, 0, 0, 3.7, 31.1504, 12.6072, 12.1884)
+amplitude = 0.6
+frequency = 0.4
+
+[node name="FloatPlatform17" parent="Obstacles" instance=ExtResource("3_0budf")]
+transform = Transform3D(-0.191519, 0, -3.69293, 0, 0.4, 0, 3.09408, 0, -0.228587, 35.945, 15.4005, 22.4127)
+amplitude = 0.6
+frequency = 0.4
+
+[node name="FloatPlatform18" parent="Obstacles" instance=ExtResource("3_0budf")]
+transform = Transform3D(2.87098, 0, 1.39574, 0, 0.4, 0, -1.1694, 0, 3.42665, 38.9599, 17.4556, 36.4322)
 amplitude = 0.6
 frequency = 0.4
 
@@ -260,14 +327,19 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.50311, 2.8886, 7.75409)
 [node name="AlienArtefact2" parent="Props" instance=ExtResource("4_kmgk4")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.6832, 6.64108, 59.7676)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.637, 6.04426, 24.6106)
+light_color = Color(1, 0.835294, 0.780392, 1)
+light_energy = 1.186
+omni_range = 7.63011
+
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_57gal")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(-0.317192, -0.490862, -0.811446, -0.62492, -0.535412, 0.568163, -0.713347, 0.687305, -0.136921, -2.76193, 17.2574, 1.96784)
-light_energy = 2.0
+transform = Transform3D(-0.701717, 0.0662689, -0.709367, -0.62492, -0.535412, 0.568163, -0.342152, 0.841987, 0.417121, -2.82798, 17.2574, 1.96784)
 shadow_enabled = true
 
 [node name="Pickups" type="Node3D" parent="."]
@@ -307,3 +379,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7866, 9.0253, 17.6456)
 
 [node name="AmmoPickup3" parent="Pickups" instance=ExtResource("6_acj8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4929, 9.0253, 16.8821)
+
+[node name="AmmoPickup12" parent="Pickups" instance=ExtResource("6_acj8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7944, 0.790505, 29.7141)
+ammo = 40
+
+[node name="AmmoPickup13" parent="Pickups" instance=ExtResource("6_acj8i")]
+transform = Transform3D(0.571974, 0, 0.820272, 0, 1, 0, -0.820272, 0, 0.571974, 13.6176, 0.531849, 28.673)
+ammo = 40
+
+[node name="AmmoPickup14" parent="Pickups" instance=ExtResource("6_acj8i")]
+transform = Transform3D(0.571974, 0, 0.820272, 0, 1, 0, -0.820272, 0, 0.571974, 12.0388, 0.528425, 28.6341)
+ammo = 40

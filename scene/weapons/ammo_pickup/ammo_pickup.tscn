@@ -3,8 +3,11 @@
 [ext_resource type="Script" path="res://scene/weapons/ammo_pickup/ammo_pickup.gd" id="1_skp3x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xo0hy"]
-shading_mode = 0
-albedo_color = Color(0.0980392, 0.580392, 0, 1)
+shading_mode = 2
+albedo_color = Color(0, 0, 0.580392, 1)
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.266667, 1, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m768q"]
 material = SubResource("StandardMaterial3D_xo0hy")

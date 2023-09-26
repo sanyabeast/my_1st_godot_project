@@ -10,17 +10,17 @@ var current_vel = Vector3.ZERO
 var dir = Vector3.ZERO
 
 const SPEED: float = 7
-const SPRINT_SPEED: float = 12
-const ACCEL: float = 5
+const SPRINT_SPEED: float = 14
+const ACCEL: float = 8
 
 const GRAVITY: float = -36
 const JUMP_SPEED: float = 14
 const JUMP_SPEED_FADE: float = 0.3
 var jump_counter: int = 0
-const AIR_ACCEL: float = 0.1
+const AIR_ACCEL: float = 0.2
 
 var _current_acceleration: float = 0.0
-var _current_acceleration_alpha: float = 0.25
+var _current_acceleration_alpha: float = 0.3
 
 func _ready():
 	print("ready")

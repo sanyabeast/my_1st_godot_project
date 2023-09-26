@@ -49,9 +49,9 @@ reload_speed = 2.0
 damage = 12
 ammo_in_mag = 30
 extra_ammo = 120
-fire_rate = 3.0
 weapon_name = "Rifle"
 equip_speed = 1.2
+unequip_speed = 1.2
 reload_speed = 1.2
 
 [node name="HUD" parent="." instance=ExtResource("5_kdk6x")]
