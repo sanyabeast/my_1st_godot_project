@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bp4miqshfyl4o"
+path="res://.godot/imported/structureBase.obj-edd5eda70678ba50bbe73112b5a5d457.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structureBase.obj-edd5eda70678ba50bbe73112b5a5d457.mesh"]
+
+source_file="res://assets/models/packs/survival_kit/structureBase.obj"
+dest_files=["res://.godot/imported/structureBase.obj-edd5eda70678ba50bbe73112b5a5d457.mesh", "res://.godot/imported/structureBase.obj-edd5eda70678ba50bbe73112b5a5d457.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

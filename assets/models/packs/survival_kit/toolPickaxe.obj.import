@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cwrs8sltsicgq"
+path="res://.godot/imported/toolPickaxe.obj-b90c9baf004776e6909cb9e74d5fa6ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/toolPickaxe.obj-b90c9baf004776e6909cb9e74d5fa6ed.mesh"]
+
+source_file="res://assets/models/packs/survival_kit/toolPickaxe.obj"
+dest_files=["res://.godot/imported/toolPickaxe.obj-b90c9baf004776e6909cb9e74d5fa6ed.mesh", "res://.godot/imported/toolPickaxe.obj-b90c9baf004776e6909cb9e74d5fa6ed.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

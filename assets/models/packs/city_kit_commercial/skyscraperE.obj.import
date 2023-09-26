@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqqr0q6585mpn"
+path="res://.godot/imported/skyscraperE.obj-3c49943d040904bab9aeb6d2e1fbb854.mesh"
+
+[deps]
+
+files=["res://.godot/imported/skyscraperE.obj-3c49943d040904bab9aeb6d2e1fbb854.mesh"]
+
+source_file="res://assets/models/packs/city_kit_commercial/skyscraperE.obj"
+dest_files=["res://.godot/imported/skyscraperE.obj-3c49943d040904bab9aeb6d2e1fbb854.mesh", "res://.godot/imported/skyscraperE.obj-3c49943d040904bab9aeb6d2e1fbb854.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

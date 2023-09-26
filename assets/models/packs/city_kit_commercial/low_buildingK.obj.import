@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://h3ucfhuw2bgl"
+path="res://.godot/imported/low_buildingK.obj-b5ba3818fc261b5ec6bdc0103ba42079.mesh"
+
+[deps]
+
+files=["res://.godot/imported/low_buildingK.obj-b5ba3818fc261b5ec6bdc0103ba42079.mesh"]
+
+source_file="res://assets/models/packs/city_kit_commercial/low_buildingK.obj"
+dest_files=["res://.godot/imported/low_buildingK.obj-b5ba3818fc261b5ec6bdc0103ba42079.mesh", "res://.godot/imported/low_buildingK.obj-b5ba3818fc261b5ec6bdc0103ba42079.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

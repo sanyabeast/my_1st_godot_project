@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhhf3f483k0ea"
+path="res://.godot/imported/fountainSquare.obj-ce22e9f3edc3968b13fbc019327051fd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fountainSquare.obj-ce22e9f3edc3968b13fbc019327051fd.mesh"]
+
+source_file="res://assets/models/packs/fantasy_town_kit/fountainSquare.obj"
+dest_files=["res://.godot/imported/fountainSquare.obj-ce22e9f3edc3968b13fbc019327051fd.mesh", "res://.godot/imported/fountainSquare.obj-ce22e9f3edc3968b13fbc019327051fd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

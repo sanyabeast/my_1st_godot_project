@@ -4,4 +4,7 @@
 
 [node name="Unarmed" type="Node3D"]
 script = ExtResource("1_8ijs6")
+damage = 1
+ammo_in_mag = 0
+extra_ammo = 0
 weapon_name = "Unarmed"

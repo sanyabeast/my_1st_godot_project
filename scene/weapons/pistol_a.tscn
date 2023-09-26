@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ui5a1q1qqf5p"]
+[gd_scene load_steps=10 format=3 uid="uid://ui5a1q1qqf5p"]
 
 [ext_resource type="Script" path="res://scene/weapons/weapon.gd" id="1_dkqki"]
-[ext_resource type="ArrayMesh" uid="uid://bnwmbvt73oxic" path="res://models/packs/blaster_kit/blasterB.obj" id="2_fvibw"]
+[ext_resource type="PackedScene" uid="uid://drqa7l50cn3y2" path="res://scene/weapons/main/muzzle_flash.tscn" id="3_rtohp"]
+[ext_resource type="ArrayMesh" uid="uid://bnwmbvt73oxic" path="res://assets/models/packs/blaster_kit/blasterB.obj" id="3_s8s4v"]
 
 [sub_resource type="Animation" id="Animation_21mwr"]
 resource_name = "Equip"
@@ -33,6 +34,37 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_08oi5"]
+resource_name = "Fire"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/Anchor/Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.174533, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fire_bullet"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_bjoi2"]
 length = 0.001
 tracks/0/type = "value"
@@ -46,6 +78,34 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root/Anchor/Body:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cacn1"]
+resource_name = "Reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/Anchor/Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.28319, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_t1b06"]
@@ -81,12 +141,20 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxutj"]
 _data = {
 "Equip": SubResource("Animation_21mwr"),
+"Fire": SubResource("Animation_08oi5"),
 "RESET": SubResource("Animation_bjoi2"),
+"Reload": SubResource("Animation_cacn1"),
 "Unequip": SubResource("Animation_t1b06")
 }
 
 [node name="Pistol_A" type="Node3D"]
 script = ExtResource("1_dkqki")
+damage = 30
+ammo_in_mag = 8
+extra_ammo = 24
+fire_rate = 0.8
+impact_effect = ExtResource("3_rtohp")
+muzzle_flash_path = NodePath("Root/Anchor/MuzzleFlash")
 weapon_name = "Pistol"
 
 [node name="Root" type="Node3D" parent="."]
@@ -99,8 +167,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="Upper" type="MeshInstance3D" parent="Root/Anchor/Body"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-mesh = ExtResource("2_fvibw")
+mesh = ExtResource("3_s8s4v")
 skeleton = NodePath("../../../..")
+
+[node name="MuzzleFlash" parent="Root/Anchor" instance=ExtResource("3_rtohp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0155446, -0.576831)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

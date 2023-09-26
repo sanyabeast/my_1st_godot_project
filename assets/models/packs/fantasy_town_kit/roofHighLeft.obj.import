@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bhnpgk3qlr7t4"
+path="res://.godot/imported/roofHighLeft.obj-0056d30e7242cc28c5f3902b7e8e014c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roofHighLeft.obj-0056d30e7242cc28c5f3902b7e8e014c.mesh"]
+
+source_file="res://assets/models/packs/fantasy_town_kit/roofHighLeft.obj"
+dest_files=["res://.godot/imported/roofHighLeft.obj-0056d30e7242cc28c5f3902b7e8e014c.mesh", "res://.godot/imported/roofHighLeft.obj-0056d30e7242cc28c5f3902b7e8e014c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

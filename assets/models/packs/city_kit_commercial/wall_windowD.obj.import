@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://tde6hrgdqp3p"
+path="res://.godot/imported/wall_windowD.obj-447d409c7c92392e37e6a4ae3d8f6235.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_windowD.obj-447d409c7c92392e37e6a4ae3d8f6235.mesh"]
+
+source_file="res://assets/models/packs/city_kit_commercial/wall_windowD.obj"
+dest_files=["res://.godot/imported/wall_windowD.obj-447d409c7c92392e37e6a4ae3d8f6235.mesh", "res://.godot/imported/wall_windowD.obj-447d409c7c92392e37e6a4ae3d8f6235.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

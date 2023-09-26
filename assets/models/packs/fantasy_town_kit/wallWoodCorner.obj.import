@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://623jrm2e034r"
+path="res://.godot/imported/wallWoodCorner.obj-3c15da0a91ca3369add2f7f40e3b1578.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodCorner.obj-3c15da0a91ca3369add2f7f40e3b1578.mesh"]
+
+source_file="res://assets/models/packs/fantasy_town_kit/wallWoodCorner.obj"
+dest_files=["res://.godot/imported/wallWoodCorner.obj-3c15da0a91ca3369add2f7f40e3b1578.mesh", "res://.godot/imported/wallWoodCorner.obj-3c15da0a91ca3369add2f7f40e3b1578.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

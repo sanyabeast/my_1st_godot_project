@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bppbfv4q5xhsm"
+path="res://.godot/imported/blade.obj-c41bf4ed441397dcdadb2edb73c15cdf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/blade.obj-c41bf4ed441397dcdadb2edb73c15cdf.mesh"]
+
+source_file="res://assets/models/packs/fantasy_town_kit/blade.obj"
+dest_files=["res://.godot/imported/blade.obj-c41bf4ed441397dcdadb2edb73c15cdf.mesh", "res://.godot/imported/blade.obj-c41bf4ed441397dcdadb2edb73c15cdf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

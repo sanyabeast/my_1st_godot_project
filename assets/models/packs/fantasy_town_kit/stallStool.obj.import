@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0xm6bs66fq2x"
+path="res://.godot/imported/stallStool.obj-fdd9b03c317408abf2393f37bf9b0fc0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stallStool.obj-fdd9b03c317408abf2393f37bf9b0fc0.mesh"]
+
+source_file="res://assets/models/packs/fantasy_town_kit/stallStool.obj"
+dest_files=["res://.godot/imported/stallStool.obj-fdd9b03c317408abf2393f37bf9b0fc0.mesh", "res://.godot/imported/stallStool.obj-fdd9b03c317408abf2393f37bf9b0fc0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

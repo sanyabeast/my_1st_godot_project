@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgdesnhvlofxy"
+path="res://.godot/imported/structureRoof.obj-15871f1130d2f4f754f8ae12de55c879.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structureRoof.obj-15871f1130d2f4f754f8ae12de55c879.mesh"]
+
+source_file="res://assets/models/packs/survival_kit/structureRoof.obj"
+dest_files=["res://.godot/imported/structureRoof.obj-15871f1130d2f4f754f8ae12de55c879.mesh", "res://.godot/imported/structureRoof.obj-15871f1130d2f4f754f8ae12de55c879.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bp1537g82qb7m"
+path="res://.godot/imported/barrelOpen.obj-f6e1aa874146d04e1e2881a3de048c68.mesh"
+
+[deps]
+
+files=["res://.godot/imported/barrelOpen.obj-f6e1aa874146d04e1e2881a3de048c68.mesh"]
+
+source_file="res://assets/models/packs/survival_kit/barrelOpen.obj"
+dest_files=["res://.godot/imported/barrelOpen.obj-f6e1aa874146d04e1e2881a3de048c68.mesh", "res://.godot/imported/barrelOpen.obj-f6e1aa874146d04e1e2881a3de048c68.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

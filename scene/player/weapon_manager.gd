@@ -13,25 +13,33 @@ var all_weapons = {}
 var weapons = {}
 
 var hud
-var current_weapon
+var current_weapon: Weapon
 var current_weapon_slot: EWeaponSlot = EWeaponSlot.Empty
 
 var changing_weapon: bool = false
 var unequipped_weapon: bool = false
 
+@onready var ray: RayCast3D = get_node("../Camera3D/RayCast3D")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("WeaponManager initializing. owner: %s" % owner)
+	
 	hud = owner.get_node("HUD")
+	ray.add_exception(owner)
+	
 	all_weapons = {
 		"Unarmed": preload("res://scene/weapons/unarmed.tscn"),
 		"Pistol_A": preload("res://scene/weapons/pistol_a.tscn"),
-		"Rifle_A": preload("res://scene/weapons/rifle_a.tscn")
+		"Rifle_A": preload("res://scene/weapons/rifle_a.tscn"),
+		"Pistol_B": preload("res://scene/weapons/pistol_b1.tscn"),
+		"Rifle_B": preload("res://scene/weapons/rifle_b1.tscn")
 	}
 	
 	weapons = {
 		EWeaponSlot.Empty: all_weapons["Unarmed"].instantiate(),
-		EWeaponSlot.Primary: $Pistol_A,
-		EWeaponSlot.Secondary: $Rifle_A
+		EWeaponSlot.Primary: $Pistol,
+		EWeaponSlot.Secondary: $Rifle
 	}
 	
 	for w in weapons:
@@ -39,11 +47,30 @@ func _ready():
 			weapons[w].weapon_manager = self
 			weapons[w].player = owner
 			weapons[w].visible = false
+			weapons[w].ray = ray
 		
 	current_weapon = weapons[EWeaponSlot.Empty]
 	change_weapon(EWeaponSlot.Empty)
 	
 	set_process(false)
+
+func fire():
+	if not changing_weapon:
+		current_weapon.fire()
+		
+func fire_stop():
+	current_weapon.fire_stop()
+	
+func reload():
+	if not changing_weapon:
+		current_weapon.reload()
+	
+func add_ammo(amount: int = 0)-> bool: 
+	if current_weapon == null || amount <= 0:
+		return false
+	
+	current_weapon.update_ammo(Weapon.EAmmoUpdateType.Add, amount)
+	return true
 
 func _process(delta):
 	if unequipped_weapon == false:

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dy2j7wtolkw6i"
+path="res://.godot/imported/roof_corner.obj-0f8df922ff8b78c5b20b487eb8c94af3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roof_corner.obj-0f8df922ff8b78c5b20b487eb8c94af3.mesh"]
+
+source_file="res://assets/models/packs/city_kit_commercial/roof_corner.obj"
+dest_files=["res://.godot/imported/roof_corner.obj-0f8df922ff8b78c5b20b487eb8c94af3.mesh", "res://.godot/imported/roof_corner.obj-0f8df922ff8b78c5b20b487eb8c94af3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

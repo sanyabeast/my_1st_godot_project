@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btbxla8cayn0q"
+path="res://.godot/imported/campfire.obj-d1c0f4e805ec072929e19229cc181fb4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/campfire.obj-d1c0f4e805ec072929e19229cc181fb4.mesh"]
+
+source_file="res://assets/models/packs/survival_kit/campfire.obj"
+dest_files=["res://.godot/imported/campfire.obj-d1c0f4e805ec072929e19229cc181fb4.mesh", "res://.godot/imported/campfire.obj-d1c0f4e805ec072929e19229cc181fb4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

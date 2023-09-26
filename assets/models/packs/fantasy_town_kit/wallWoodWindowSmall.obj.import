@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bl602ooqr63ka"
+path="res://.godot/imported/wallWoodWindowSmall.obj-619a63b7c72c9e64dd544daa543aa633.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodWindowSmall.obj-619a63b7c72c9e64dd544daa543aa633.mesh"]
+
+source_file="res://assets/models/packs/fantasy_town_kit/wallWoodWindowSmall.obj"
+dest_files=["res://.godot/imported/wallWoodWindowSmall.obj-619a63b7c72c9e64dd544daa543aa633.mesh", "res://.godot/imported/wallWoodWindowSmall.obj-619a63b7c72c9e64dd544daa543aa633.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
