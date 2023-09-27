@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://kj358lk41b5i"]
 
-[ext_resource type="Script" path="res://scene/weapons/weapon.gd" id="1_j20va"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_w7meo"]
 [ext_resource type="PackedScene" uid="uid://drqa7l50cn3y2" path="res://scene/weapons/main/muzzle_flash.tscn" id="3_81pnt"]
 [ext_resource type="ArrayMesh" uid="uid://5p7dkhr0fe3o" path="res://assets/models/packs/blaster_kit/blasterD.obj" id="3_bqoeo"]
 
@@ -172,7 +172,7 @@ _data = {
 }
 
 [node name="Rifle_A" type="Node3D"]
-script = ExtResource("1_j20va")
+script = ExtResource("1_w7meo")
 damage = 12
 ammo_in_mag = 30
 extra_ammo = 120

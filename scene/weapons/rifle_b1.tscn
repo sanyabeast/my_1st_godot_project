@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bca7fmegxs8wn"]
 
 [ext_resource type="PackedScene" uid="uid://b1xkxrtsalagy" path="res://assets/models/weapons/rifle_b1/rifle_b1.blend" id="1_bpfo0"]
-[ext_resource type="Script" path="res://scene/weapons/weapon.gd" id="2_65yw3"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="2_65yw3"]
 [ext_resource type="PackedScene" uid="uid://drqa7l50cn3y2" path="res://scene/weapons/main/muzzle_flash.tscn" id="3_v88b8"]
 [ext_resource type="Texture2D" uid="uid://bjt07ilv11dcc" path="res://assets/models/weapons/rifle_b1/Rifle_B_UI.png" id="4_aqxnv"]
 

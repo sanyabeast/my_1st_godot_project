@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ui5a1q1qqf5p"]
 
-[ext_resource type="Script" path="res://scene/weapons/weapon.gd" id="1_dkqki"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_dkqki"]
 [ext_resource type="PackedScene" uid="uid://drqa7l50cn3y2" path="res://scene/weapons/main/muzzle_flash.tscn" id="3_rtohp"]
 [ext_resource type="ArrayMesh" uid="uid://bnwmbvt73oxic" path="res://assets/models/packs/blaster_kit/blasterB.obj" id="3_s8s4v"]
 

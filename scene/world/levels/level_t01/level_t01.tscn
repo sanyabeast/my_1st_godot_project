@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vaem02ui5auu" path="res://scene/world/float_platform.tscn" id="3_0budf"]
 [ext_resource type="PackedScene" uid="uid://d4bpf20goppwo" path="res://scene/props/alien_artefact.tscn" id="4_kmgk4"]
 [ext_resource type="PackedScene" uid="uid://cfef4a2ywe5dv" path="res://scene/player/player.tscn" id="5_6f8sn"]
-[ext_resource type="Shader" path="res://scene/world/main/sky_shader_a1.gdshader" id="6_6tujc"]
+[ext_resource type="Shader" path="res://shaders/sky_shader_a1.gdshader" id="6_1s207"]
 [ext_resource type="PackedScene" uid="uid://b0nl83hhk0uw4" path="res://scene/weapons/ammo_pickup/ammo_pickup.tscn" id="6_acj8i"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j4wsc"]
@@ -24,7 +24,7 @@ noise = SubResource("FastNoiseLite_n04hm")
 noise = SubResource("FastNoiseLite_s0ko8")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hw642"]
-shader = ExtResource("6_6tujc")
+shader = ExtResource("6_1s207")
 shader_parameter/wind_direction = Vector2(1, 0)
 shader_parameter/wind_speed = 10.0
 shader_parameter/_density = 0.01
