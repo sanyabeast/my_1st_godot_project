@@ -70,6 +70,7 @@ secondary={
 
 [rendering]
 
+renderer/rendering_method="mobile"
 renderer/rendering_method.mobile="gl_compatibility"
 anti_aliasing/quality/screen_space_aa=1
 anti_aliasing/quality/use_taa=true
