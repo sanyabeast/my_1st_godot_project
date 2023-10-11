@@ -9,14 +9,18 @@ const MOUSE_SENSITIVITY = 0.1
 var current_vel = Vector3.ZERO
 var dir = Vector3.ZERO
 
-const SPEED = 10
-const SPRINT_SPEED = 20
-const ACCEL = 15.0
+const SPEED: float = 7
+const SPRINT_SPEED: float = 14
+const ACCEL: float = 8
 
-const GRAVITY = -40
-const JUMP_SPEED = 15
-var jump_counter = 0
-const AIR_ACCEL = 9.0
+const GRAVITY: float = -36
+const JUMP_SPEED: float = 14
+const JUMP_SPEED_FADE: float = 0.3
+var jump_counter: int = 0
+const AIR_ACCEL: float = 0.2
+
+var _current_acceleration: float = 0.0
+var _current_acceleration_alpha: float = 0.3
 
 func _ready():
 	print("ready")
@@ -29,7 +33,14 @@ func _input(event):
 		$CameraRoot.rotation_degrees.x = clamp($CameraRoot.rotation_degrees.x, -75, 75)
 		# rotates the view horizontally
 		self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
-
+		
+	if event is InputEventMouseButton:
+		if event.pressed:
+			match event.button_index:
+				MOUSE_BUTTON_WHEEL_UP:
+					weapon_manager.next_weapon()
+				MOUSE_BUTTON_WHEEL_DOWN:
+					weapon_manager.prev_weapon()
 func _process(delta):
 	window_activity()
 	
@@ -50,9 +61,11 @@ func process_movement(delta):
 		dir -= camera.global_transform.basis.x
 
 	
-	var speed = SPRINT_SPEED if Input.is_action_pressed("sprint") else SPEED
+	var speed = SPRINT_SPEED if (Input.is_action_pressed("sprint") and is_on_floor()) else SPEED
 	var target_vel = dir * speed
 	var accel = ACCEL if is_on_floor() else AIR_ACCEL
+	
+	_current_acceleration = lerp(_current_acceleration, accel, _current_acceleration_alpha * delta)
 	
 	dir = dir.normalized()
 	
@@ -62,22 +75,31 @@ func process_movement(delta):
 		jump_counter = 0
 		
 	if Input.is_action_just_pressed("jump") and jump_counter < 2:
+		var jump_speed = lerp(JUMP_SPEED, JUMP_SPEED / (jump_counter + 1), JUMP_SPEED_FADE)
 		jump_counter += 1
-		velocity.y = JUMP_SPEED
+		velocity.y = jump_speed
 		
 
-	velocity.x = lerp(velocity.x, target_vel.x, accel * delta)
-	velocity.z = lerp(velocity.z, target_vel.z, accel * delta)
+	velocity.x = lerp(velocity.x, target_vel.x, _current_acceleration * delta)
+	velocity.z = lerp(velocity.z, target_vel.z, _current_acceleration * delta)
 	
 	move_and_slide()
 
 func process_weapons(delta):
 	if Input.is_action_just_pressed("empty"):
-		weapon_manager.change_weapon("Empty")
+		weapon_manager.change_weapon(WeaponManager.EWeaponSlot.Empty)
 	if Input.is_action_just_pressed("primary"):
-		weapon_manager.change_weapon("Primary")
+		weapon_manager.change_weapon(WeaponManager.EWeaponSlot.Primary)
 	if Input.is_action_just_pressed("secondary"):
-		weapon_manager.change_weapon("Secondary")
+		weapon_manager.change_weapon(WeaponManager.EWeaponSlot.Secondary)
+		
+	if Input.is_action_just_pressed("Fire"):
+		weapon_manager.fire()
+	if Input.is_action_just_released("Fire"):
+		weapon_manager.fire_stop()
+		
+	if Input.is_action_just_pressed("Reload"):
+		weapon_manager.reload()
 
 func window_activity():
 	if Input.is_action_just_pressed("ui_cancel"):

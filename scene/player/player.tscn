@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfef4a2ywe5dv"]
+[gd_scene load_steps=8 format=3 uid="uid://cfef4a2ywe5dv"]
 
 [ext_resource type="Script" path="res://scene/player/player.gd" id="1_rqsyk"]
 [ext_resource type="Script" path="res://scene/player/weapon_manager.gd" id="2_7jo84"]
-[ext_resource type="PackedScene" uid="uid://0kmtim1ocjq7" path="res://scene/weapons/unarmed.tscn" id="2_htm4p"]
-[ext_resource type="PackedScene" uid="uid://ui5a1q1qqf5p" path="res://scene/weapons/pistol_a.tscn" id="2_k7rt2"]
-[ext_resource type="PackedScene" uid="uid://kj358lk41b5i" path="res://scene/weapons/rifle_a.tscn" id="3_aadvs"]
+[ext_resource type="PackedScene" uid="uid://dw7ihqga6oi51" path="res://scene/weapons/pistol_b1.tscn" id="3_ui1k3"]
+[ext_resource type="PackedScene" uid="uid://bca7fmegxs8wn" path="res://scene/weapons/rifle_b1.tscn" id="4_xs06c"]
 [ext_resource type="PackedScene" uid="uid://bok25g4kigywj" path="res://scene/ui/hud/hud.tscn" id="5_kdk6x"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rdbti"]
@@ -29,16 +28,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 [node name="Camera3D" type="Camera3D" parent="CameraRoot"]
 fov = 85.0
 
+[node name="RayCast3D" type="RayCast3D" parent="CameraRoot/Camera3D"]
+target_position = Vector3(0, 0, -100)
+
 [node name="Weapons" type="Node3D" parent="CameraRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.15, -0.225)
 script = ExtResource("2_7jo84")
 
-[node name="Unarmed" parent="CameraRoot/Weapons" instance=ExtResource("2_htm4p")]
+[node name="Pistol" parent="CameraRoot/Weapons" instance=ExtResource("3_ui1k3")]
+damage = 30
+ammo_in_mag = 8
+extra_ammo = 55
+fire_rate = 1.1
+weapon_name = "Pistol"
+equip_speed = 2.0
+unequip_speed = 2.0
+reload_speed = 2.0
 
-[node name="Pistol_A" parent="CameraRoot/Weapons" instance=ExtResource("2_k7rt2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.055, -0.184)
-visible = false
-
-[node name="Rifle_A" parent="CameraRoot/Weapons" instance=ExtResource("3_aadvs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, -0.075, -0.24)
+[node name="Rifle" parent="CameraRoot/Weapons" instance=ExtResource("4_xs06c")]
+damage = 12
+ammo_in_mag = 30
+extra_ammo = 120
+weapon_name = "Rifle"
+equip_speed = 1.2
+unequip_speed = 1.2
+reload_speed = 1.2
 
 [node name="HUD" parent="." instance=ExtResource("5_kdk6x")]

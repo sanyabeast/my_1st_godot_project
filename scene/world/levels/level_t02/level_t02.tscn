@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://uonni6tfly6d"]
+
+[ext_resource type="PackedScene" uid="uid://duyl83smm3cqs" path="res://scene/world/levels/level_t02/models/level_t04_terrain_main.blend" id="1_ym4xq"]
+[ext_resource type="Shader" path="res://shaders/sky_shader_a1.gdshader" id="2_na10g"]
+[ext_resource type="PackedScene" uid="uid://cfef4a2ywe5dv" path="res://scene/player/player.tscn" id="3_ljfy3"]
+[ext_resource type="PackedScene" uid="uid://b0nl83hhk0uw4" path="res://scene/weapons/ammo_pickup/ammo_pickup.tscn" id="4_1yj0u"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a0o4a"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_8h8uo"]
+noise = SubResource("FastNoiseLite_a0o4a")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4gquu"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vorms"]
+noise = SubResource("FastNoiseLite_4gquu")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ggnir"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_yplyf"]
+noise = SubResource("FastNoiseLite_ggnir")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_geo22"]
+shader = ExtResource("2_na10g")
+shader_parameter/wind_direction = Vector2(1, 0)
+shader_parameter/wind_speed = 1.0
+shader_parameter/_density = 0.045
+shader_parameter/cloud_coverage = 0.426
+shader_parameter/_time_offset = 0.0
+shader_parameter/rayleigh = 21.86
+shader_parameter/rayleigh_color = Color(0.26, 0.41, 0.58, 1)
+shader_parameter/mie = 0.12
+shader_parameter/mie_eccentricity = 0.8
+shader_parameter/mie_color = Color(0.63, 0.77, 0.92, 1)
+shader_parameter/turbidity = 10.0
+shader_parameter/sun_disk_scale = 1.0
+shader_parameter/ground_color = Color(1, 1, 1, 1)
+shader_parameter/exposure = 0.1
+shader_parameter/worlnoise = SubResource("NoiseTexture3D_yplyf")
+shader_parameter/perlworlnoise = SubResource("NoiseTexture3D_8h8uo")
+shader_parameter/weathermap = SubResource("NoiseTexture2D_vorms")
+
+[sub_resource type="Sky" id="Sky_do0xp"]
+sky_material = SubResource("ShaderMaterial_geo22")
+
+[sub_resource type="Environment" id="Environment_57gal"]
+background_mode = 2
+sky = SubResource("Sky_do0xp")
+ambient_light_source = 2
+ambient_light_color = Color(0.8, 0.639216, 0.678431, 1)
+tonemap_mode = 3
+ssr_enabled = true
+ssr_max_steps = 128
+ssr_depth_tolerance = 0.11
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_y_scale = 0
+glow_normalized = true
+glow_intensity = 1.0
+glow_strength = 0.4
+glow_bloom = 1.0
+glow_blend_mode = 0
+fog_light_energy = 1.25
+fog_sun_scatter = 1.0
+fog_density = 0.005
+fog_height_density = -0.05
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_sky_affect = 0.286
+volumetric_fog_temporal_reprojection_amount = 0.99
+
+[node name="level_t04" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+unique_name_in_owner = true
+environment = SubResource("Environment_57gal")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.568571, 0.388284, 0.725233, -0.0401808, -0.893654, 0.446955, 0.821652, 0.224985, 0.523707, -2.76193, 17.2574, 3.96784)
+light_energy = 0.8
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("3_ljfy3")]
+transform = Transform3D(-0.261684, 0, 0.965154, 0, 1, 0, -0.965154, 0, -0.261684, 63.0263, -3.07532, -16.1453)
+
+[node name="Arch" type="Node3D" parent="."]
+
+[node name="level_t04_terrain_main" parent="Arch" instance=ExtResource("1_ym4xq")]
+
+[node name="AmmoPickup" parent="." instance=ExtResource("4_1yj0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.8132, -3.2473, 4.58626)
+
+[node name="AmmoPickup2" parent="." instance=ExtResource("4_1yj0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.8132, -3.2473, 4.58626)
+
+[node name="AmmoPickup3" parent="." instance=ExtResource("4_1yj0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9873, -3.2473, 4.58626)

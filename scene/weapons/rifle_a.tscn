@@ -1,14 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://kj358lk41b5i"]
+[gd_scene load_steps=10 format=3 uid="uid://kj358lk41b5i"]
 
-[ext_resource type="Script" path="res://scene/weapons/weapon.gd" id="1_j20va"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bo6t"]
-albedo_color = Color(0, 0.0509804, 0.0196078, 1)
-metallic = 0.5
-roughness = 0.64
-
-[sub_resource type="BoxMesh" id="BoxMesh_mrn27"]
-material = SubResource("StandardMaterial3D_1bo6t")
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_w7meo"]
+[ext_resource type="PackedScene" uid="uid://drqa7l50cn3y2" path="res://scene/weapons/main/muzzle_flash.tscn" id="3_81pnt"]
+[ext_resource type="ArrayMesh" uid="uid://5p7dkhr0fe3o" path="res://assets/models/packs/blaster_kit/blasterD.obj" id="3_bqoeo"]
 
 [sub_resource type="Animation" id="Animation_21mwr"]
 resource_name = "Equip"
@@ -40,6 +34,49 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_pw6s0"]
+resource_name = "Fire"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/Anchor/Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.5), Vector3(0, 0, -0.495), Vector3(0, 0, -0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root/Anchor/Body:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0174533, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fire_bullet"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_bjoi2"]
 length = 0.001
 tracks/0/type = "value"
@@ -53,6 +90,46 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root/Anchor/Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root/Anchor/Body:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qt5lk"]
+resource_name = "Reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/Anchor/Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.39626, 0, 0.523599), Vector3(1.5708, 0, -0.523599), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_t1b06"]
@@ -88,12 +165,20 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wxutj"]
 _data = {
 "Equip": SubResource("Animation_21mwr"),
+"Fire": SubResource("Animation_pw6s0"),
 "RESET": SubResource("Animation_bjoi2"),
+"Reload": SubResource("Animation_qt5lk"),
 "Unequip": SubResource("Animation_t1b06")
 }
 
 [node name="Rifle_A" type="Node3D"]
-script = ExtResource("1_j20va")
+script = ExtResource("1_w7meo")
+damage = 12
+ammo_in_mag = 30
+extra_ammo = 120
+fire_rate = 5.0
+impact_effect = ExtResource("3_81pnt")
+muzzle_flash_path = NodePath("Root/Anchor/MuzzleFlash")
 weapon_name = "Rifle"
 
 [node name="Root" type="Node3D" parent="."]
@@ -105,19 +190,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.0291542, 0, 0, 0, 0.0382455, 0, 0, 0, 0.25, 0, 0.0140435, 0)
-mesh = SubResource("BoxMesh_mrn27")
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.0140435, 0)
+mesh = ExtResource("3_bqoeo")
 skeleton = NodePath("../../../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.0128855, 0, 0, 0, 0.0699219, 0.00566059, 0, -0.0158718, 0.0249374, 0, -0.0245317, 0.0975919)
-mesh = SubResource("BoxMesh_mrn27")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Root/Anchor/Body"]
-transform = Transform3D(0.0128855, 0, 0, 0, 0.0508745, -0.00178691, 0, 0.00356374, 0.0255092, 0, -0.0125127, 0.0459063)
-mesh = SubResource("BoxMesh_mrn27")
-skeleton = NodePath("../../../..")
+[node name="MuzzleFlash" parent="Root/Anchor" instance=ExtResource("3_81pnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0312687, -0.692748)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
